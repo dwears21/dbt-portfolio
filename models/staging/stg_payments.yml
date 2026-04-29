@@ -1,0 +1,23 @@
+version: 2 
+models:
+  - name: stg_payments
+    description: "A tranaction table of payments"
+    columns:
+      - name: payment_id
+        description: "Pk of the table"
+        data_tests:
+          - not_null
+          - unique
+      - name: order_id
+        description: "one to many id for relating to orders table"
+        data_tests:
+          - not_null
+      - name: payment_method 
+        description: "categorical column for payment type"
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["bank_transfer","gift_card","credit_card","coupon"]
+                        
+          
