@@ -1,0 +1,20 @@
+version: 2
+models:
+  - name: stg_customers
+    description:  "staging model brings in source dat and renames the id column to customer_id"
+    columns:
+      - name: customer_id
+        description:  "unique customer idenitifer pk"
+        tests:
+        - unique
+        - not_null
+      - name: first_name
+        description: "customer first name"
+        tests:
+          - not_null
+      - name: last_name
+        description: "customer last name"
+        tests:
+         - not_null
+          
+

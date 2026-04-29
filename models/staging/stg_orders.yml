@@ -1,0 +1,28 @@
+version: 2
+models:
+  - name: stg_orders
+    description: "stg model  brings in source data and renames orders_id and user_id"
+    columns:
+      - name: order_id
+        description: "Pk"
+        data_tests:
+          - not_null
+          - unique
+      -  name: customer_id
+         description: "id of every user that made a purchase "
+         data_tests: 
+          - not_null
+      - name: order_date
+        description: "date of transaction"
+        data_tests: 
+          - not_null
+      - name: status
+        description: "current step of customer transaction"
+        data_tests:
+          - not_null 
+          - accepted_values:
+              arguments:
+                values: ["placed","shipped","completed","return_pending","returned"]        
+          
+          
+           
