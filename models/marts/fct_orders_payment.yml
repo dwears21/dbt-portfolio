@@ -1,0 +1,47 @@
+version: 2
+models:
+  - name: "fct_orders"
+    description: "this table relates orders to payments join on the order_id"
+    columns:
+      - name: order_id
+        description: "id for every order"
+        data_tests:
+          - not_null
+      - name: payment_id 
+        description:  "PK lowest grain"
+        data_tests:
+          - unique
+          - not_null
+      - name: payment_method
+        description: "method used for payments nulls allowed "
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["credit_card", "coupon", "bank_transfer", "gift_card"]
+      - name: amount
+        description: "amount paid nulls allowed "
+      - name: customer_id
+        description: "unique id for every costusomer 1 to many relationship"
+        data_tests:
+          - not_null
+      - name: order_date
+        description: "date the order was taken"
+        data_tests:
+          - not_null
+      - name: status
+        description: "current status of the order"
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments: 
+                values: ["placed","shipped","completed","return_pending","returned"]
+          
+          
+          
+          
+          
+
+
+
+
+

@@ -1,0 +1,28 @@
+version: 2
+models:
+  - name: 'dim_customers'
+    description: "dim_customers joins customer and orders on customer_id"
+    columns:
+      - name: customer_id
+        description: "PK"
+        data_tests:
+          - not_null 
+          - unique
+      - name: first_name
+        description: "first name of the customer" 
+        data_tests:
+          - not_null
+      - name: last_name
+        description: "last name of the customer"
+        data_tests:
+          - not_null
+      - name: number_of_orders
+        description: "count of orders made by customer"
+        data_tests: 
+          - not_null
+      - name: first_order_date
+        description: "the first order per customer if no order place expect null"
+        
+      - name: most_recent_order_date
+        description: "most_recent_order_date per customer if no order place expect null"
+        
