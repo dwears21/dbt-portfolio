@@ -1,15 +1,22 @@
-Welcome to your new dbt project!
+Jaffle Shop: dbt Analytics Engineering
 
-### Using the starter project
+### Goal: Transform raw e-commerce data into a production-ready Star Schema using dbt
 
-Try running the following commands:
-- dbt run
-- dbt test
+Architecture:
+- Staging: Standardized naming, casting, and deduplication.
+
+- Marts: Modeled dim_customers and fct_orders for BI consumption.
+
+- Quality: Enforced data integrity via automated schema and referential tests.
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### Critical Fix: Solving Payment Fan-out:
+- The Challenge: Multiple payment methods per order (e.g., Credit Card + Gift Card) caused a grain mismatch. A direct join would "fan out" the data, doubling or tripling reported revenue.
+- The Solution: I aggregated payments to the order_id level before joining. This ensured the fct_orders grain remained 1:1, preventing "ghost revenue" and ensuring 100% financial accuracy.
+
+### Tech Stack
+ - dbt Core (Modeling & Documentation)
+
+ - SQL (CTEs & Modular logic)
+
+ - YAML (Testing & Validation)
