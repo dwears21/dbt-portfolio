@@ -1,0 +1,23 @@
+version: 2
+models:
+  - name: stg_nw_order_details 
+    description: "Northwinds orders information"
+    columns:
+    - name: order_id
+      description: "id of order not unique"
+      data_tests:
+        - not_null
+    - name: product_id
+      description: "product id not unique"
+      data_tests:
+        - not_null
+    - name: unit_price
+      description: "price per unit"
+      data_tests:
+        - not_null
+    - name: quantity
+      description: "qty"
+      data_tests:
+        - not_null
+    - name: discount
+      description: "infomation related the order"

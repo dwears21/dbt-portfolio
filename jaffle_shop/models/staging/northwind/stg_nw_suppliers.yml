@@ -1,0 +1,44 @@
+version: 2
+models:
+  - name: stg_nw_suppliers 
+    description: "Northwinds suppliers table"
+    columns:
+    - name: supplier_id
+      description: "unique pk for supplier"
+      data_tests:
+        - unique
+        - not_null
+    - name: company_name
+      description: "name for suppiler"
+      data_tests:
+        - not_null
+    - name: contact_title 
+      description: "title of the contact"
+      data_tests:
+        - not_null
+    - name: address
+      description: "location of suppiler"
+    - name: city 
+      description: "city of suppiler"
+      data_tests:
+        - not_null
+    - name: region 
+      description: "region of suppiler"
+    - name: postal_code
+      description: "zipcode of supplier"
+    - name: country
+      description: "country of supplier"
+      data_tests:
+        - not_null
+    - name: phone
+      description: "phone # of the suppiler"
+      data_tests:
+        - not_null
+    - name: fax 
+      description: "fax # of the suppiler"
+    - name: home_page
+
+    
+        
+        
+       
