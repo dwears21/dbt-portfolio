@@ -1,0 +1,26 @@
+version: 2
+models:
+  - name: stg_nw_employees
+    description: "Northwinds employee tracker"
+    columns:
+    - name: employee_id
+      description: "unique pk for employee"
+      data_tests:
+        - unique
+        - not_null
+    - name: employee_name
+      description: "name of employee"
+      data_tests:
+        - not_null
+    - name: title
+      description: "current postion"
+      data_tests:
+        - not_null
+    - name: city 
+      description: 'current city'
+      data_tests:
+        - not_null
+    - name: reports_to
+      description: 'current supervisor'
+      
+        

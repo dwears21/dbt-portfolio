@@ -1,0 +1,54 @@
+version: 2
+models:
+  - name: stg_nw_customers
+    description: "staging model brings source data and remanes columns"
+    columns:
+      - name: customer_id
+        description: "unique customer idenitifer pk"
+        data_tests:
+          - unique
+          - not_null
+      - name: company_name
+        description: "name of company"
+        data_tests:
+          - not_null
+      - name: contact_name
+        description: "contact name for company"
+        data_tests:
+         - not_null
+      - name: contact_title 
+        description: "Title of the contact for the company"
+        data_tests:
+         - not_null
+      - name: address
+        description: "Location of company"
+        data_tests:
+          - not_null
+      - name: city 
+        description:  "city name of company"
+        data_tests:
+          - not_null
+      - name: region 
+        description: "region of company"
+        data_tests:
+          - not_null
+      - name: postal_code    
+        description: "postal code of the company"
+        data_tests:
+          - not_null
+      - name: country
+        description: "country of the company"
+        data_tests:
+          - not_null
+      - name: phone
+        description: "phone # of company"
+        data_tests:
+          - not_null
+      - name: fax 
+        description: "Fax # of the company"
+        data_tests:
+          - not_null
+            
+          
+          
+          

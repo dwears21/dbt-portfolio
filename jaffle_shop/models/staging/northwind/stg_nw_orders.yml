@@ -1,0 +1,36 @@
+version: 2
+models:
+  - name: stg_nw_orders
+    description: "Northwinds Orders"
+    columns:
+      - name: order_id
+        description: " orders Pk"
+        data_tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "customer identification"
+        data_tests:
+          - not_null
+      - name: employee_id
+        description: "employee identification"
+        data_tests:
+          - not_null
+      - name: order_date
+        description: "dates of the placed order"
+        data_tests:
+          - not_null
+      - name: required_date
+        description: "date needed by"
+        data_tests:
+          - not_null
+      - name: shipped_date
+        description: "date of shipment"
+      - name: shipper_id
+        description: "shipper identifier"
+        data_tests:
+          - not_null
+      - name: freight
+        description: "name of freighter"
+          
+          

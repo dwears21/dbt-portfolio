@@ -1,0 +1,22 @@
+version: 2
+models:
+  - name: stg_nw_categories
+    description: "Northwinds product table"
+    columns:
+    - name: category_id
+      description: "unique pk for category"
+      data_tests:
+        - unique
+        - not_null
+    - name: category_name
+      description: "name for northwind products"
+      data_tests:
+        - not_null
+    - name: description
+      description: "information related to northwinds categories"
+      data_tests:
+       
+        
+            
+        
+        

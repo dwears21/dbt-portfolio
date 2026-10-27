@@ -1,0 +1,53 @@
+version: 2
+models:
+  - name: stg_nw_products
+    description: "Northwinds product tracker"
+    columns:
+    - name: product_id
+      description: "unique pk for products"
+      data_tests:
+        - unique
+        - not_null
+    - name: product_name
+      description: "product nomenclature"
+      data_tests:
+        - not_null
+    - name: supplier_id
+      description: "supplier id"
+      data_tests:
+        - not_null
+    - name: category_id
+      description: "category id"
+      data_tests:
+        - not_null
+    - name: quantity_per_unit
+      description: "amount on hand per unit"
+      data_tests:
+        - not_null
+    - name: unit_price
+      description: "cost per unit"
+      data_tests:
+        - not_null
+    - name: units_in_stock
+      description: "amount of the unit currently in stock"
+      data_tests:
+        - not_null
+    - name: units_on_order
+      description: "amount of the unit currently on order"
+      data_tests:
+        - not_null
+    - name: reorder_level
+      description: "amount when units need to be reordered"
+      data_tests:
+        - not_null
+    - name: discontinued
+      description: "is product still active"
+      data_tests:
+        - not_null
+        - accepted_values:
+            arguments:
+              values: [0,1]
+              quote: false
+        
+        
+        
